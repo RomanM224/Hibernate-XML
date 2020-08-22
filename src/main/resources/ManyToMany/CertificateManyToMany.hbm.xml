@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "com.maistruk.hibernate_2.ManyToMany.CertificateManyToMany" table = "CERTIFICATE_MANY_TO_MANY">
+      
+      <meta attribute = "class-description">
+         This class contains the certificate records. 
+      </meta>
+      
+      <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+      
+      <property name = "name" column = "certificate_name" type = "string"/>
+      
+   </class>
+
+</hibernate-mapping>

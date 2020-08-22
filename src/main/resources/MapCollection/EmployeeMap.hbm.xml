@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "com.maistruk.hibernate_2.model.MapCollection.EmployeeMap" table = "EMPLOYEE_MAP">
+      
+      <meta attribute = "class-description">
+         This class contains the employee detail. 
+      </meta>
+      
+      <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+      
+      <map name = "certificates" cascade="all">
+         <key column = "employee_id"/>
+         <index column = "certificate_type" type = "string"/>
+         <one-to-many class="com.maistruk.hibernate_2.model.MapCollection.CertificateMap"/>
+      </map>
+      
+      <property name = "firstName" column = "first_name" type = "string"/>
+      <property name = "lastName" column = "last_name" type = "string"/>
+      
+   </class>
+</hibernate-mapping>
